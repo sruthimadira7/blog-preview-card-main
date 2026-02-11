@@ -3,8 +3,6 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- displays site properly based on user's device -->
-
         <link
             rel="icon"
             type="image/png"
@@ -16,31 +14,37 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <article class="wrapper">
-            <img
-                src="./assets/images/illustration-article.svg"
-                alt=""
-                class="illustration-article"
-            />
-            <div class="flex-container">
-                <p id="para">Learning</p>
-                <p class="published para">Published 21 Dec 2023</p>
-                <h1 class="main heading">
-                    <a href="#">HTML & CSS foundations</a>
-                </h1>
-                <p class="text content">
-                    These languages are the backbone of every website, defining
-                    structure, content, and presentation.
-                </p>
-            </div>
-            <div class="avatar-info">
+        <main class="main">
+            <article class="article">
                 <img
-                    src="./assets/images/image-avatar.webp"
+                    src="./assets/images/illustration-article.svg"
                     alt=""
-                    class="avatar"
+                    class="article__illustration"
+                    width="336"
+                    height="201"
                 />
-                <a href="#">Greg Hooper</a>
-            </div>
-        </article>
+                <section class="section">
+                    <p class="section__learning">Learning</p>
+                    <p>Published 21 Dec 2023</p>
+                    <h1 class="section__title">
+                        <a href="#">HTML & CSS foundations</a>
+                    </h1>
+                    <p class="section__description">
+                        These languages are the backbone of every website,
+                        defining structure, content, and presentation.
+                    </p>
+                </section>
+                <section class="avatar__info">
+                    <img
+                        src="./assets/images/image-avatar.webp"
+                        alt=""
+                        class="avatar__img"
+                        width="64"
+                        height="65"
+                    />
+                    <p><a href="#" class="avatar__name">Greg Hooper</a></p>
+                </section>
+            </article>
+        </main>
     </body>
 </html>

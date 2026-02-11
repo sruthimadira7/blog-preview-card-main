@@ -3,9 +3,6 @@
 *::before,
 *::after {
     box-sizing: border-box;
-}
-
-* {
     margin: 0;
 }
 
@@ -26,19 +23,22 @@ a {
 
 /*  General Styles */
 :root {
-    --yellow-color: hsl(47, 88%, 63%);
+    --primary-color: hsl(47, 88%, 63%);
     --white-color: hsl(0, 0%, 100%);
     --gray-500: hsl(0, 0%, 42%);
     --gray-950: hsl(0, 0%, 7%);
     --fw-medium: 500;
     --fw-bold: 800;
-    --spacing-medium: 12px;
-    --spacing-large: 24px;
-    --border-radius-medium: 10px;
-    --border-radius-large: 20px;
-    --fs-small: 14px;
-    --fs-medium: 16px;
-    --fs-large: 24px;
+    --space-md: 12px;
+    --space-lg: 24px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 20px;
+    --fs-12: 12px;
+    --fs-14: 14px;
+    --fs-16: 16px;
+    --fs-20: 20px;
+    --fs-24: 24px;
 }
 
 /* figtree-500 - latin */
@@ -64,96 +64,93 @@ body {
     height: 100%;
 }
 
-body {
+.main {
     font-family: "Figtree", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: var(--yellow-color); */
+    font-size: var(--fs-12);
+    font-weight: var(--fw-medium);
     color: var(--gray-950);
-    @media (max-width: 375px) {
-        margin: auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 24px;
+    min-height: 100%;
+
+    /* Mobile First Approach */
+    @media (min-width: 1440px) {
+        font-size: var(--fs-14);
     }
 }
 
 body,
-#para {
-    background-color: var(--yellow-color);
+.section__learning {
+    background-color: var(--primary-color);
 }
 
-.wrapper {
+.article {
     max-width: 384px;
-    /* width: fit-content; */
-    padding: var(--spacing-large);
+    padding: var(--space-lg);
     border: 1px solid var(--gray-950);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-large);
-    border-radius: var(--border-radius-large);
+    gap: var(--space-lg);
+    border-radius: var(--border-radius-lg);
     background-color: var(--white-color);
     box-shadow: 8px 8px black;
 }
 
-.illustration-article {
-    border-radius: var(--border-radius-medium);
+.article__illustration {
     object-fit: cover;
+    border-radius: var(--border-radius-md);
 }
 
-.flex-container {
+.section {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--spacing-large) / 2);
+    gap: var(--space-md);
 }
 
-#para {
+.section__learning {
     width: fit-content;
     padding: 4px 12px;
-    /* background-color: var(--yellow-color); */
-    border-radius: 4px;
-    /* font-weight: var(--fw-bold); */
-    /* font-size: var(--fs-small); */
-    font: var(--fw-bold) var(--fs-small) "Figtree";
+    border-radius: var(--border-radius-sm);
+    font-weight: var(--fw-bold);
 }
 
-.published.para {
-    /* font-size: var(--fs-small); */
-    /* font-weight: var(--fw-medium); */
-    font: var(--fw-medium) var(--fs-small) "Figtree";
-}
-
-.main.heading {
-    /* font-size: var(--fs-large); */
-    /* font-weight: var(--fw-bold); */
-    font: var(--fw-bold) var(--fs-large) "Figtree";
+.section__title {
+    font-size: var(--fs-20);
+    font-weight: var(--fw-bold);
 
     &:hover,
-    &:focus,
     &:active {
-        color: var(--yellow-color);
+        color: var(--primary-color);
+    }
+
+    @media (min-width: 1440px) {
+        font-size: var(--fs-24);
     }
 }
 
-.text.content {
+.section__description {
     color: var(--gray-500);
-    /* font-size: var(--fs-medium); */
-    /* font-weight: var(--fw-medium); */
-    font: var(--fw-medium) var(--fs-medium) "Figtree";
+    font-size: var(--fs-14);
+
+    @media (min-width: 1440px) {
+        font-size: var(--fs-16);
+    }
 }
-.avatar-info {
+
+.avatar__info {
     display: flex;
-    gap: 5.5px;
+    gap: var(--space-md);
     align-items: center;
 }
 
-.avatar-info a {
-    color: var(--gray-950);
-    /* font-size: var(--fs-small); */
-    /* font-weight: var(--fw-bold); */
-    font: var(--fw-bold) var(--fs-small) "Figtree";
-}
-
-.avatar {
-    object-fit: cover;
+.avatar__img {
     width: 32px;
     height: 32px;
+}
+
+.avatar__name {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-14);
 }
